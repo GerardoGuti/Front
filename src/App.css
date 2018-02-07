@@ -1,0 +1,35 @@
+
+.App{
+  width: 100%;
+  height: auto;
+  display: flex;
+  background: rgba(158, 158, 158, 0.931);
+}
+.bar{
+  background: black;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column
+}
+.cart{
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.cart-button{
+  border-top: 1px solid rgba(245, 245, 245, 0.616);
+  margin-top: auto;
+}
+
+.products-section{
+  padding-left: 70px;
+}
+.bar-button{
+  border-bottom: 1px solid rgba(245, 245, 245, 0.616);
+  border-radius: 2px;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 3px;
+}
