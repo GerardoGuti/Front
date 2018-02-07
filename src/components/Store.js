@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
 import Product from './product.js';
-const url = 'http://10.40.10.53:3000/api/product';
+import * as ProductController from '../controllers/productController';
 
 function Feed(props){
     var productlist = props.products.map(element => 
@@ -21,11 +20,20 @@ class Store extends Component{
         }
     }
     componentWillMount(){
-        Axios.get(url).then(result=>{
-            this.setState({
-                products: result.data
-            });
-        }).catch(err=>console.log(err));
+        ProductController.getAllProducts((err,products)=>{
+            if(err){}
+            else{
+                this.setState({
+                products
+            })}
+        })
+
+        
+        // Axios.get(url).then(result=>{
+        //     this.setState({
+        //         products: result.data
+        //     });
+        // }).catch(err=>console.log(err));
     }
     render(){
         return(

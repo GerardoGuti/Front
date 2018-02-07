@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
-import App from '../App';
-import Description from '../components/description';
-import Store from '../components/Store';
+import App from '../App.js';
+import Description from '../components/description.js';
+import Store from '../components/Store.js';
 // import Cart from '../components/Cart';
 
 

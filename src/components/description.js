@@ -22,7 +22,7 @@ class Description extends Component{
                     {product.name}
                 </div>
                 <div>
-                    <img src={product.imageUrl}/>
+                    <div><img alt="" src={product.imageUrl}/></div>
                     <div className="price">${product.price}</div>
                     <div className="description">{product.description}</div>
                 </div>

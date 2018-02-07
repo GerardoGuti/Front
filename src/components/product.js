@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/product.css';
 import Axios from 'axios';
-import Description from './description'
 import {Link} from 'react-router-dom'
 
 const url='http://10.40.10.53:3000/api/product/';
