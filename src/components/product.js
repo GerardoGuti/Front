@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/product.css';
-import Axios from 'axios';
 import {Link} from 'react-router-dom'
-
-const url='http://10.40.10.53:3000/api/product/';
+import * as ProductController from '../controllers/productController';
 
 class Product extends Component{
     constructor(){
@@ -12,6 +10,7 @@ class Product extends Component{
             show    : true,
             product : {}
         }
+        
     }
     componentWillMount(){
         this.setState({
@@ -40,7 +39,7 @@ class Product extends Component{
                     Add to the cart
                 </div>
                 <div className="button"
-                onClick={()=>this.DeleteProduct(product._id)}
+                onClick={()=>this.deleteProduct(product._id)}
                 >
                     Delete
                 </div>
@@ -48,14 +47,24 @@ class Product extends Component{
         )
     }
     
-    DeleteProduct(id){
-        Axios.delete(url+id).then(res=>{
-            console.log(res)
-            this.setState({
-                show: false
-            })
-        }
-        ).catch();
+    deleteProduct(id){
+        ProductController.deleteProduct(id,(err,res)=>{
+            if(err){console.log(err)}
+            else{
+                this.setState({
+                    show:false
+                })
+            }
+        })
+
+    }
+    updateProduct(id,body){
+        ProductController.updateProduct(id,body,(err,res)=>{
+            if(err){console.log(err)}
+            else{
+                console.log(res)
+            }
+        })
     }
 }
 

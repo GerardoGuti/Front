@@ -27,13 +27,6 @@ class Store extends Component{
                 products
             })}
         })
-
-        
-        // Axios.get(url).then(result=>{
-        //     this.setState({
-        //         products: result.data
-        //     });
-        // }).catch(err=>console.log(err));
     }
     render(){
         return(

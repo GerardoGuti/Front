@@ -1,32 +1,33 @@
+
 import Axios from 'axios';
 
-const url='http://10.40.10.53:3000/api/product';
+const url='http://10.40.10.53:3000/api/client';
 
-export function postProduct(body,callback){
+export function postClient(body,callback){
     Axios.post(url,body)
         .then(res=>{callback(null,res)})
         .catch(err=>{callback(err,null)})
 }
 
-export function getAllProducts(callback){
+export function getAllClients(callback){
     Axios.get(url)
-        .then(res=>{callback(null,res.data)})
+        .then(res=>{callback(null,res)})
         .catch(err=>{callback(err,null)})
 }
 
-export function getProductbyid(id,callback){
+export function getClientbyid(id,callback){
     Axios.get(`${url}/${id}`)
         .then(res=>{callback(null,res)})
         .catch(err=>{callback(err,null)})
 }
 
-export function deleteProduct(id,callback){
+export function deleteClient(id,callback){
     Axios.delete(`${url}/${id}`)
         .then(res=>{callback(null,res)})
         .catch(err=>{callback(err,null)})
 }
 
-export function updateProduct(id,body,callback){
+export function updateClient(id,body,callback){
     Axios.put(`${url}/${id}`,body)
     .then(res=>{callback(null,res)})
     .catch(err=>{callback(err,null)})
